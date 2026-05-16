@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DoomDimmer</title>
+    <meta name="description" content="A local-first Chrome extension that interrupts mindless scrolling without hard-blocking websites.">
+    <link rel="icon" href="./icon128.png" type="image/png">
+    <link rel="alternate icon" href="./icon128.png">
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="./" aria-label="DoomDimmer home">
+        <img src="./icon128.png" alt="" width="48" height="48">
+        <span>DoomDimmer</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="#features">Features</a>
+        <a href="#privacy">Privacy</a>
+        <a href="./privacy.html">Policy</a>
+        <a href="https://github.com/tayor/doomdimmer">GitHub</a>
+      </nav>
+    </header>
+
+    <main class="site-main">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="pill"><span aria-hidden="true">✦</span> Local-first Chrome extension</p>
+          <h1 id="hero-title">Stop mindless scrolling without blocking the web.</h1>
+          <p class="lede">DoomDimmer detects rapid, continuous scrolling patterns locally in your browser, then gently fades and blurs the page until you pause and choose what to do next.</p>
+          <div class="actions" aria-label="Primary actions">
+            <a class="button primary" href="https://github.com/tayor/doomdimmer">
+              <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 .9a11.1 11.1 0 0 0-3.5 21.64c.56.1.77-.24.77-.54v-2.12c-3.14.68-3.8-1.34-3.8-1.34-.5-1.3-1.24-1.64-1.24-1.64-1.02-.7.08-.69.08-.69 1.13.08 1.72 1.16 1.72 1.16 1 .1.73 2.62 2.96 1.87.1-.72.4-1.22.72-1.5-2.5-.28-5.13-1.25-5.13-5.57 0-1.23.44-2.24 1.16-3.02-.12-.29-.5-1.44.1-2.99 0 0 .95-.3 3.1 1.15A10.8 10.8 0 0 1 12 6.9c.96 0 1.92.13 2.82.38 2.16-1.45 3.1-1.15 3.1-1.15.62 1.55.23 2.7.12 2.99a4.36 4.36 0 0 1 1.16 3.02c0 4.33-2.64 5.28-5.15 5.56.41.36.77 1.05.77 2.12V22c0 .3.2.65.78.54A11.1 11.1 0 0 0 12 .9Z"/></svg>
+              View source
+            </a>
+            <a class="button secondary" href="./privacy.html">
+              <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 2.25 4.5 5.2v5.65c0 4.7 3.18 9.1 7.5 10.35 4.32-1.26 7.5-5.65 7.5-10.35V5.2L12 2.25Zm0 2.12 5.5 2.16v4.32c0 3.6-2.27 7.07-5.5 8.25-3.23-1.18-5.5-4.65-5.5-8.25V6.53L12 4.37Zm3.12 5.08-4.05 4.06-1.84-1.84-1.33 1.33 3.17 3.18 5.38-5.39-1.33-1.34Z"/></svg>
+              Privacy policy
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-label="DoomDimmer product preview">
+          <div class="browser-mockup" aria-hidden="true">
+            <div class="browser-topbar">
+              <span class="traffic red"></span>
+              <span class="traffic yellow"></span>
+              <span class="traffic green"></span>
+              <span class="browser-arrow">←</span>
+              <span class="browser-arrow">→</span>
+              <span class="address"><span class="lock">▣</span> example.com</span>
+              <img class="mini-logo" src="./icon128.png" alt="" aria-hidden="true" width="20" height="20">
+              <span class="kebab">⋮</span>
+            </div>
+            <div class="browser-body hero-comparison" role="slider" aria-label="Scroll left or right to reveal normal page or dimmed state" aria-valuemin="14" aria-valuemax="86" aria-valuenow="50" aria-valuetext="50 percent page visible" tabindex="0" title="Drag, scroll, or use left and right arrows to compare page states">
+              <div class="feed-panel feed-left">
+                <div class="hero-photo">
+                  <span class="photo-kicker">Top story</span>
+                  <span class="sun"></span>
+                  <span class="ridge one"></span>
+                  <span class="ridge two"></span>
+                  <span class="lake"></span>
+                  <span class="photo-glow"></span>
+                </div>
+                <div class="post-row">
+                  <div class="thumb street"></div>
+                  <div class="post-content">
+                    <span class="avatar"></span>
+                    <span class="post-kicker">News</span>
+                    <span class="post-title">City commute stays calm after dawn</span>
+                    <span class="line short"></span>
+                    <span class="line"></span>
+                    <span class="line medium"></span>
+                  </div>
+                </div>
+                <div class="post-row">
+                  <div class="thumb food"></div>
+                  <div class="post-content">
+                    <span class="avatar"></span>
+                    <span class="post-kicker">Explore</span>
+                    <span class="post-title">Weekend dining with low glare mode</span>
+                    <span class="line medium"></span>
+                    <span class="line"></span>
+                    <span class="line tiny"></span>
+                  </div>
+                </div>
+                <div class="post-row">
+                  <div class="thumb concert"></div>
+                  <div class="post-content">
+                    <span class="avatar"></span>
+                    <span class="post-kicker">For You</span>
+                    <span class="post-title">Night show recommendations tonight</span>
+                    <span class="line"></span>
+                    <span class="line medium"></span>
+                    <span class="line short"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="feed-panel feed-right" aria-hidden="true">
+                <div class="hero-photo">
+                  <span class="photo-kicker">Top story</span>
+                  <span class="sun"></span>
+                  <span class="ridge one"></span>
+                  <span class="ridge two"></span>
+                  <span class="lake"></span>
+                  <span class="photo-glow"></span>
+                </div>
+                <div class="post-row">
+                  <div class="thumb street"></div>
+                  <div class="post-content">
+                    <span class="avatar"></span>
+                    <span class="post-kicker">News</span>
+                    <span class="post-title">City commute stays calm after dawn</span>
+                    <span class="line short"></span>
+                    <span class="line"></span>
+                    <span class="line medium"></span>
+                  </div>
+                </div>
+                <div class="post-row">
+                  <div class="thumb food"></div>
+                  <div class="post-content">
+                    <span class="avatar"></span>
+                    <span class="post-kicker">Explore</span>
+                    <span class="post-title">Weekend dining with low glare mode</span>
+                    <span class="line medium"></span>
+                    <span class="line"></span>
+                    <span class="line tiny"></span>
+                  </div>
+                </div>
+                <div class="post-row">
+                  <div class="thumb concert"></div>
+                  <div class="post-content">
+                    <span class="avatar"></span>
+                    <span class="post-kicker">For You</span>
+                    <span class="post-title">Night show recommendations tonight</span>
+                    <span class="line"></span>
+                    <span class="line medium"></span>
+                    <span class="line short"></span>
+                  </div>
+                </div>
+              </div>
+              <span class="wipe-line"></span>
+              <span class="wipe-handle"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8.6 7.4-4.6 4.6 4.6 4.6 1.4-1.4L6.8 12 10 8.8 8.6 7.4Zm6.8 0L14 8.8l3.2 3.2-3.2 3.2 1.4 1.4L20 12l-4.6-4.6Z"/></svg></span>
+              <span class="dimmer"></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="features" id="features" aria-labelledby="features-title">
+        <div class="section-heading">
+          <p class="eyebrow">Behavior over blocking</p>
+          <h2 id="features-title">A mindful nudge, not a punishment.</h2>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <span class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7.2 8.2c2.2 0 3.45 2.1 4.8 3.8 1.35-1.7 2.6-3.8 4.8-3.8 2.28 0 4 1.68 4 3.8s-1.72 3.8-4 3.8c-2.2 0-3.45-2.1-4.8-3.8-1.35 1.7-2.6 3.8-4.8 3.8-2.28 0-4-1.68-4-3.8s1.72-3.8 4-3.8Zm0 2c-1.14 0-2 .78-2 1.8s.86 1.8 2 1.8c1.06 0 2.03-1.06 3.55-3.8-.86-1.08-1.8-1.8-3.55-1.8Zm9.6 0c-1.06 0-2.03 1.06-3.55 3.8.86 1.08 1.8 1.8 3.55 1.8 1.14 0 2-.78 2-1.8s-.86-1.8-2-1.8Z"/></svg></span>
+            <span class="feature-number">1</span>
+            <h3>Detects passive scrolling</h3>
+            <p>Uses local scroll and engagement signals instead of reading page content or uploading browsing history.</p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2.5a9.5 9.5 0 0 1 9.5 9.5h-2a7.5 7.5 0 0 0-7.5-7.5v-2Zm-1 0v2a7.5 7.5 0 0 0-7.5 7.5h-2A9.5 9.5 0 0 1 11 2.5Zm10.5 10.5a9.5 9.5 0 0 1-8.5 8.45v-2.02A7.5 7.5 0 0 0 19.5 13h2ZM11 19.43v2.02A9.5 9.5 0 0 1 1.55 13H3.57A7.5 7.5 0 0 0 11 19.43Z"/></svg></span>
+            <span class="feature-number">2</span>
+            <h3>Dims progressively</h3>
+            <p>Grayscale and blur build gradually, making automatic consumption less comfortable without breaking the page.</p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12.4 21h-2v-5.3c-3.85-.45-6.6-3.25-6.6-7.08V5.8h2.82c2.33 0 4.36 1.1 5.38 2.9 1.02-1.8 3.05-2.9 5.38-2.9h2.82v2.82c0 3.83-2.75 6.63-6.6 7.08V21h-1.2Zm-6.6-13.2v.82c0 2.52 1.83 4.43 4.6 4.95V12.8c0-2.93-1.84-5-4.6-5Zm7.8 5.77c2.77-.52 4.6-2.43 4.6-4.95V7.8c-2.76 0-4.6 2.07-4.6 5v.77Z"/></svg></span>
+            <span class="feature-number">3</span>
+            <h3>Restores intentionally</h3>
+            <p>Type a short reflection phrase or use accessibility restore mode to return the page to normal.</p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm6.93 9h-3.15a15.9 15.9 0 0 0-1.18-5.07A8.02 8.02 0 0 1 18.93 11ZM12 4.04c.73 1.06 1.54 3.16 1.76 6.96h-3.52c.22-3.8 1.03-5.9 1.76-6.96ZM4.26 13h3.96c.14 2.12.5 3.9 1.03 5.22A8.02 8.02 0 0 1 4.26 13Zm3.96-2H4.26a8.02 8.02 0 0 1 4.99-5.22A15.46 15.46 0 0 0 8.22 11ZM12 19.96c-.73-1.06-1.54-3.16-1.76-6.96h3.52c-.22 3.8-1.03 5.9-1.76 6.96Zm2.75-1.74c.53-1.32.89-3.1 1.03-5.22h3.96a8.02 8.02 0 0 1-4.99 5.22Z"/></svg></span>
+            <span class="feature-number">4</span>
+            <h3>Works where you choose</h3>
+            <p>Run on all sites, common infinite-scroll sites, or selected site rules with wildcard and per-site overrides.</p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 7h9.1a3 3 0 0 0 5.8 0H20V5h-1.1a3 3 0 0 0-5.8 0H4v2Zm12-2a1 1 0 1 1 0 2 1 1 0 0 1 0-2ZM4 13h1.1a3 3 0 0 0 5.8 0H20v-2h-9.1a3 3 0 0 0-5.8 0H4v2Zm4-2a1 1 0 1 1 0 2 1 1 0 0 1 0-2Zm-4 8h9.1a3 3 0 0 0 5.8 0H20v-2h-1.1a3 3 0 0 0-5.8 0H4v2Zm12-2a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z"/></svg></span>
+            <span class="feature-number">5</span>
+            <h3>Configurable defaults</h3>
+            <p>Choose gentle, balanced, strict, or custom thresholds for intervention, cooldown, density, and visual intensity.</p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 20V10h3v10H5Zm5.5 0V5h3v15h-3Zm5.5 0V8h3v12h-3Z"/></svg></span>
+            <span class="feature-number">6</span>
+            <h3>Optional local stats</h3>
+            <p>Aggregate intervention counts can stay on this device, disabled by default and clearable at any time.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="privacy-band" id="privacy" aria-labelledby="privacy-title">
+        <div class="shield-badge" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M32 6 11 14v15.6C11 42.7 19.7 54.2 32 58c12.3-3.8 21-15.3 21-28.4V14L32 6Zm0 8.2 13 5v10.4c0 8.8-5.2 16.7-13 20.1-7.8-3.4-13-11.3-13-20.1V19.2l13-5Z"/><path d="M24 31h16v13H24V31Zm4-5a4 4 0 0 1 8 0v5h-3v-5a1 1 0 0 0-2 0v5h-3v-5Z"/></svg></div>
+        <div class="privacy-copy">
+          <p class="eyebrow">Privacy-first by design</p>
+          <h2 id="privacy-title">No account. No analytics.<br>No server processing.</h2>
+          <p>DoomDimmer stores settings in <code>chrome.storage.local</code> and does not sell, share, or transmit browsing activity, page content, scroll behavior, or settings.</p>
+        </div>
+        <a class="button primary policy-button" href="./privacy.html">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 2.25 4.5 5.2v5.65c0 4.7 3.18 9.1 7.5 10.35 4.32-1.26 7.5-5.65 7.5-10.35V5.2L12 2.25Zm0 2.12 5.5 2.16v4.32c0 3.6-2.27 7.07-5.5 8.25-3.23-1.18-5.5-4.65-5.5-8.25V6.53L12 4.37Zm3.12 5.08-4.05 4.06-1.84-1.84-1.33 1.33 3.17 3.18 5.38-5.39-1.33-1.34Z"/></svg>
+          Read the policy
+        </a>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand footer-brand" href="./" aria-label="DoomDimmer home">
+        <img src="./icon128.png" alt="" width="44" height="44">
+        <span>DoomDimmer</span>
+      </a>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="https://github.com/tayor/doomdimmer/issues">Support</a>
+        <a href="./privacy.html">Privacy</a>
+        <a href="./privacy.html">Policy</a>
+        <a href="https://github.com/tayor/doomdimmer">GitHub</a>
+      </nav>
+    </footer>
+    <script>
+      (() => {
+        const comparison = document.querySelector('.hero-comparison');
+        if (!comparison) return;
+
+        const minSplit = 14;
+        const maxSplit = 86;
+        const step = 4;
+        let dragging = false;
+
+        const getSplit = () => {
+          const value = parseFloat(getComputedStyle(comparison).getPropertyValue('--hero-split')) || 50;
+          return Number.isFinite(value) ? value : 50;
+        };
+
+        const clampSplit = (value) => Math.min(maxSplit, Math.max(minSplit, value));
+
+        const setSplit = (value) => {
+          const split = clampSplit(value);
+          comparison.style.setProperty('--hero-split', `${split}%`);
+          comparison.setAttribute('aria-valuenow', `${Math.round(split)}`);
+          comparison.setAttribute('aria-valuetext', `${Math.round(split)} percent page visible`);
+          return split;
+        };
+
+        const setFromClientX = (clientX) => {
+          const rect = comparison.getBoundingClientRect();
+          if (!rect.width) return;
+          const ratio = (clientX - rect.left) / rect.width;
+          setSplit(ratio * 100);
+        };
+
+        const startDrag = (event) => {
+          if (event.button !== 0 && event.pointerType !== 'touch') return;
+          dragging = true;
+          if (event.pointerId != null) {
+            comparison.setPointerCapture(event.pointerId);
+          }
+          setFromClientX(event.clientX);
+          comparison.focus({ preventScroll: true });
+          event.preventDefault();
+        };
+
+        const moveDrag = (event) => {
+          if (!dragging) return;
+          setFromClientX(event.clientX);
+        };
+
+        const stopDrag = (event) => {
+          if (!dragging) return;
+          dragging = false;
+          if (event?.pointerId != null && comparison.hasPointerCapture?.(event.pointerId)) {
+            comparison.releasePointerCapture(event.pointerId);
+          }
+        };
+
+        comparison.addEventListener('pointerdown', startDrag);
+        comparison.addEventListener('pointermove', moveDrag);
+        comparison.addEventListener('pointercancel', stopDrag);
+        comparison.addEventListener('pointerleave', stopDrag);
+        window.addEventListener('pointerup', stopDrag);
+
+        comparison.addEventListener('wheel', (event) => {
+          const delta = Math.abs(event.deltaX) >= Math.abs(event.deltaY) ? event.deltaX : event.deltaY;
+          if (!delta) return;
+          const direction = delta > 0 ? 1 : -1;
+          setSplit(getSplit() + direction * step);
+          event.preventDefault();
+        }, { passive: false });
+
+        comparison.addEventListener('keydown', (event) => {
+          if (event.key === 'ArrowLeft') {
+            setSplit(getSplit() - step);
+            event.preventDefault();
+          } else if (event.key === 'ArrowRight') {
+            setSplit(getSplit() + step);
+            event.preventDefault();
+          } else if (event.key === 'Home') {
+            setSplit(minSplit);
+            event.preventDefault();
+          } else if (event.key === 'End') {
+            setSplit(maxSplit);
+            event.preventDefault();
+          }
+        });
+
+        setSplit(50);
+      })();
+    </script>
+  </body>
+</html>

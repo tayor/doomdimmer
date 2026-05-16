@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DoomDimmer Setup</title>
+  </head>
+  <body class="welcome-body">
+    <main class="welcome-shell">
+      <section class="welcome-copy" aria-labelledby="welcome-title">
+        <header class="brand-row">
+          <img src="./icons/logo.png" alt="" width="60" height="60">
+          <h1 style="margin:0;font-size:30px">DoomDimmer</h1>
+        </header>
+        <h1 id="welcome-title">Stop mindless scrolling without blocking the web.</h1>
+        <p>DoomDimmer detects rapid, continuous scrolling patterns locally in your browser and gently fades and blurs the page when scrolling looks automatic.</p>
+        <p class="privacy-pill"><svg viewBox="0 0 24 24"><path d="M12 21s7-4.4 7-11V5l-7-3-7 3v5c0 6.6 7 11 7 11Z"></path></svg>Your browsing activity never leaves your device.</p>
+        <div class="hero-art" aria-hidden="true"></div>
+        <div class="welcome-features">
+          <article><span class="feature-badge"><svg viewBox="0 0 24 24"><path d="M12 21s7-4.4 7-11V5l-7-3-7 3v5c0 6.6 7 11 7 11Z"></path></svg></span><div><h3>Local-first</h3><p>Everything runs on your device.</p></div></article>
+          <article><span class="feature-badge"><svg viewBox="0 0 24 24"><path d="M20 21a8 8 0 0 0-16 0"></path><path d="M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"></path></svg></span><div><h3>No account</h3><p>No sign-ups. No tracking.</p></div></article>
+          <article><span class="feature-badge"><svg viewBox="0 0 24 24"><path d="m12 3 2.5 5 5.5.8-4 3.9 1 5.5-5-2.7-5 2.7 1-5.5-4-3.9 5.5-.8L12 3Z"></path></svg></span><div><h3>Behavior-based</h3><p>Behavior-based, not site blocking.</p></div></article>
+        </div>
+      </section>
+      <section class="setup-card" aria-label="Initial setup">
+        <form id="setupForm">
+          <section class="setup-section">
+            <h2 class="setup-title"><span class="step-num">1</span>Choose your intervention level</h2>
+            <div class="choice-grid">
+              <label class="choice"><input type="radio" name="preset" value="gentle">Gentle<small>Softer fade</small></label>
+              <label class="choice"><input type="radio" name="preset" value="balanced" checked>Balanced<small>Recommended</small></label>
+              <label class="choice"><input type="radio" name="preset" value="strict">Strict<small>Fewer loopholes</small></label>
+              <label class="choice"><input type="radio" name="preset" value="custom">Custom<small>Fine-tune later</small></label>
+            </div>
+          </section>
+          <section class="setup-section">
+            <h2 class="setup-title"><span class="step-num">2</span>Where should DoomDimmer run?</h2>
+            <div class="choice-grid three">
+              <label class="choice-row"><strong>All sites</strong><span>Protect me everywhere I browse</span><input type="radio" name="siteMode" value="all_except_excluded" checked></label>
+              <label class="choice-row"><strong>Common infinite-scroll sites</strong><span>Apply only to social feeds, forums, and news sites</span><input type="radio" name="siteMode" value="common_infinite_scroll"></label>
+              <label class="choice-row"><strong>Custom site list</strong><span>Choose specific sites in settings</span><input type="radio" name="siteMode" value="only_selected"></label>
+            </div>
+          </section>
+          <section class="setup-section">
+            <h2 class="setup-title"><span class="step-num">3</span>Choose your restore phrase</h2>
+            <div class="phrase-row">
+              <input class="text-input" id="phrase" value="I am scrolling mindlessly" aria-label="Restore phrase">
+              <button class="button" id="resetPhrase" type="button" aria-label="Reset phrase"><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 3-6.7"></path><path d="M3 3v6h6"></path></svg></button>
+            </div>
+          </section>
+          <button class="button primary" style="width:100%;height:58px" type="submit">Finish setup <svg viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"></path></svg></button>
+          <button class="icon-button" id="useDefaults" type="button" style="width:100%;margin-top:16px;color:var(--brand)">Use recommended defaults</button>
+          <p class="status-line" id="setupStatus" aria-live="polite"></p>
+        </form>
+      </section>
+    </main>
+    <script type="module" src="./welcome.ts"></script>
+  </body>
+</html>

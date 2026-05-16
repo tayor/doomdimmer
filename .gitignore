@@ -1,0 +1,12 @@
+node_modules/
+dist/
+release/*
+!release/.gitkeep
+verification/runtime/
+.DS_Store
+npm-debug.log*
+playwright-report/
+test-results/
+chrome-store/
+mockups/
+verification/
